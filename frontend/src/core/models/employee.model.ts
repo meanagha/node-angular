@@ -1,7 +1,7 @@
 export interface Employee {
 
   
-emp_id?: number;
+emp_id: number;
 
   first_name: string;
 

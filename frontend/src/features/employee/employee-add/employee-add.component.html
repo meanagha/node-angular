@@ -1,1 +1,96 @@
-<p>employee-add works!</p>
+<div class="container">
+
+    <div class="card">
+
+        <h2>Add Employee</h2>
+
+        <form
+            [formGroup]="employeeForm"
+            (ngSubmit)="onSubmit()">
+
+            <label>First Name</label>
+
+            <input
+                type="text"
+                formControlName="first_name">
+
+            <small
+            *ngIf="employeeForm.get('first_name')?.invalid &&
+                   employeeForm.get('first_name')?.touched">
+
+                Name is required
+
+            </small>
+            <label>Last Name</label>
+
+            <input
+                type="text"
+                formControlName="last_name">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                formControlName="email">
+
+            <small
+            *ngIf="employeeForm.get('email')?.invalid &&
+                   employeeForm.get('email')?.touched">
+
+                Enter valid email
+
+            </small>
+
+            <label>Department</label>
+
+            <input
+                type="text"
+                formControlName="department">
+
+            <small
+            *ngIf="employeeForm.get('department')?.invalid &&
+                   employeeForm.get('department')?.touched">
+
+                Department is required
+
+            </small>
+
+            <label>Designation</label>
+
+            <input
+                type="text"
+                formControlName="designation">
+
+            <small
+            *ngIf="employeeForm.get('designation')?.invalid &&
+                   employeeForm.get('designation')?.touched">
+
+                Designation is required
+
+            </small>
+
+            <label>Salary</label>
+
+            <input
+                type="number"
+                formControlName="salary">
+
+            <small
+            *ngIf="employeeForm.get('salary')?.invalid &&
+                   employeeForm.get('salary')?.touched">
+
+                Salary is required
+
+            </small>
+
+            <button type="submit">
+
+                Save Employee
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

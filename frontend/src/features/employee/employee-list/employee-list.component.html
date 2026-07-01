@@ -4,7 +4,7 @@
 
         <h2>Employee List</h2>
 
-        <button>
+        <button routerLink="/dashboard/employees/add">
 
             Add Employee
 
@@ -54,19 +54,19 @@
 
                 <td>
 
-                    <button class="view">
+                    <button class="view" [routerLink]="['/dashboard/employees', employee.emp_id]">
 
                         View
 
                     </button>
 
-                    <button class="edit">
+                    <button class="edit" [routerLink]="['/dashboard/employees/edit', employee.emp_id]">
 
                         Edit
 
                     </button>
 
-                    <button class="delete">
+                    <button class="delete" (click)="deleteEmployee(employee.emp_id)">
 
                         Delete
 
