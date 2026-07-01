@@ -1,0 +1,83 @@
+<div class="container">
+
+    <div class="card">
+
+        <h2>Register</h2>
+
+        <form [formGroup]="registerForm"
+              (ngSubmit)="onSubmit()">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                formControlName="name">
+
+            <small
+            *ngIf="registerForm.get('name')?.touched &&
+                   registerForm.get('name')?.invalid">
+
+                Name is required
+
+            </small>
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                formControlName="email">
+
+            <small
+            *ngIf="registerForm.get('email')?.touched &&
+                   registerForm.get('email')?.invalid">
+
+                Enter valid email
+
+            </small>
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                formControlName="password">
+
+            <small
+            *ngIf="registerForm.get('password')?.touched &&
+                   registerForm.get('password')?.invalid">
+
+                Password must be at least 6 characters
+
+            </small>
+
+            <label>Role</label>
+
+            <select formControlName="role">
+
+                <option value="ADMIN">ADMIN</option>
+
+                <option value="EMPLOYEE">
+                    EMPLOYEE
+                </option>
+
+            </select>
+
+            <button
+            type="submit">
+
+                Register
+
+            </button>
+
+        </form>
+
+        <div class="register-link">
+
+            Already have an account?
+
+            <a routerLink="/login">Login</a>
+
+        </div>
+
+    </div>
+
+</div>
